@@ -1,0 +1,29 @@
+body{
+  background: linear-gradient(135deg, #cc0099, #2900a3);
+}
+.App {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.App h1 {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  margin: 0;
+  z-index: 10;
+}
+
+.error-message {
+  position: fixed;
+  top: 9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: red;
+  font-weight: bold;
+  margin: 0;
+  z-index: 1;
+}

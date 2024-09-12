@@ -1,0 +1,83 @@
+/* TaskForm */
+.taskform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.10rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rem;
+  z-index: 1;
+}
+
+.taskform input {
+  border: 0.2rem solid #0f86bd;
+  border-radius: 0.25rem;
+  padding: 0.8rem;
+  margin-right: 1rem;
+  flex: 1;
+  outline: none;
+}
+
+.taskform input:focus {
+  border-color: #00cfd6;
+}
+
+.taskform button {
+  background: #0f86bd;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+}
+
+.taskform button:hover {
+  background: #00cfd6;
+}
+
+/* TaskList */
+.tasklist {
+  margin-top: 12rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* TaskItem */
+.taskitem {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.taskitem:hover {
+  transform: scale(1.05);
+}
+
+.taskitem p {
+  color: black;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.taskitem button {
+  background: #ff7e5f;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+}
+
+.taskitem button:hover {
+  background: red;
+}
