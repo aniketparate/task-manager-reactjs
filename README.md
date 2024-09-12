@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# React Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple task manager application built with React. This project allows users to add, delete, and toggle the status of tasks.
 
-## Available Scripts
+![image](https://github.com/user-attachments/assets/4be605ab-cc15-47d4-93fa-5818bd79b2b4)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add new tasks
+- Delete existing tasks
+- Toggle task status between "Incomplete" and "Completed"
+- Fetch tasks from a server
+- Error handling for various operations
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: A JavaScript library for building user interfaces
+- **Axios**: A promise-based HTTP client for making API requests
+- **json-server**: A tool to create a fake REST API with a JSON file
+- **concurrently**: A tool to run multiple commands concurrently
 
-### `npm test`
+## Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this project, you'll need the following dependencies:
 
-### `npm run build`
+- `axios`
+- `json-server`
+- `concurrently`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    cd your-repo
+    ```
 
-### `npm run eject`
+2. **Install dependencies:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Setup the JSON server:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Ensure you have a `localStorage.json` file in the root directory with the initial tasks data:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```json
+    {
+      "tasks": []
+    }
+    ```
 
-## Learn More
+4. **Configure scripts in `package.json`:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Add the following scripts to your `package.json` file:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```json
+    "scripts": {
+      "start": "react-scripts start",
+      "server": "json-server --watch localStorage.json --port 5000",
+      "dev": "concurrently \"npm run server\" \"npm start\""
+    }
+    ```
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Start the project:**
 
-### Analyzing the Bundle Size
+    Run the following command to start both the React app and the JSON server concurrently:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    ```bash
+    npm run dev
+    ```
 
-### Making a Progressive Web App
+2. **Access the application:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Open your browser and navigate to `http://localhost:3000` to view the React application.
 
-### Advanced Configuration
+3. **Access the JSON server:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    The JSON server will be running on `http://localhost:5000/tasks`. You can use this URL to check the tasks data or interact with the API directly.
 
-### Deployment
+## File Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `src/App.js` - Main application component
+- `src/components/TaskForm.js` - Component for adding new tasks
+- `src/components/TaskList.js` - Component for listing tasks
+- `src/components/TaskItem.js` - Component for displaying task content
+- `src/services/taskService.js` - Service for interacting with the tasks API
+- `src/App.css` - Application styles
+- `localStorage.json` - JSON file used by json-server to store tasks data
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to open issues or submit pull requests if you have any suggestions or improvements.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
